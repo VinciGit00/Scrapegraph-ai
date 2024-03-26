@@ -1,4 +1,6 @@
-# Imports from standard library
+""" 
+Module for making scraping with the use of LLM
+"""
 from typing import List
 from langchain_community.llms import Ollama
 from langchain.callbacks.manager import CallbackManager
@@ -8,7 +10,10 @@ from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from .base_node import BaseNode
 
 
-class LLM_answer_node(BaseNode):
+class LLMAnswerNode(BaseNode):
+    """ 
+    Node for generating answer throught the use of LLM network
+    """
 
     def __init__(self, input: str, output: List[str], model_config: dict,
                  node_name: str = "generate_anser_llm"):
@@ -65,24 +70,25 @@ class LLM_answer_node(BaseNode):
         
         OUTPUT FORMAT:   [
         {
-        "article name":" description"
+            "article name":" description"
         },
         {
-        "article name": "description"
+            "article name": "description"
         }
         ]
 
         EXAMPLE:
         {
-        "The Keys to a Long Life Are Sleep and a Better Diet—and Money":"Nobel Prize–winning biologist Venki Ramakrishnan explores the science and charlatans of life-extension."
+            "The Keys to a Long Life Are Sleep and a Better Diet—and Money":"Nobel Prize–winning biologist Venki Ramakrishnan explores the science and charlatans of life-extension."
         },
         {
-        "Fisker Suspends Its EV Production": "After the difficult launch of its Ocean SUV, Fisker says it’s pausing production for six weeks."
+            "Fisker Suspends Its EV Production": "After the difficult launch of its Ocean SUV, Fisker says it’s pausing production for six weeks."
         }
         ]
 
         HTML CODE:   
         {doc}
+
         NOTE: you must provide the output of ONLY the list of dictionay containing the article name and description.
 
         Take a deep breath, think step by step, and provide the output.

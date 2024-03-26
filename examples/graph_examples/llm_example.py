@@ -1,4 +1,4 @@
-from scrapegraphai.nodes.llm_node import LLM_answer_node
+from scrapegraphai.nodes.llm_node import LLMAnswerNode
 
 
 def main():
@@ -8,14 +8,14 @@ def main():
         "parsed_document": "Example parsed document"
     }
 
-    # Configurazione del modello per il nodo LLM_answer_node
+    # Configurazione del modello per il nodo LLMAnswerNode
     model_config = {
         "llm_model": "your_llm_model_name_here"
         # Specifica altre configurazioni del modello se necessario
     }
 
-    # Creazione di un'istanza del nodo LLM_answer_node
-    llm_node = LLM_answer_node(
+    # Creazione di un'istanza del nodo LLMAnswerNode
+    llm_node = LLMAnswerNode(
         input=["user_input", "parsed_document"],
         output=["answer"],
         model_config=model_config
