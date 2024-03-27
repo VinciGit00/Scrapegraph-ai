@@ -73,7 +73,10 @@ class BaseNode(ABC):
         pass
 
     def get_input_keys(self, state: dict) -> List[str]:
-        # Use the _parse_input_keys method to identify which state keys are needed based on the input attribute
+        """
+        Use the _parse_input_keys method to identify which s
+        tate keys are needed based on the input attribute
+        """
         try:
             input_keys = self._parse_input_keys(state, self.input)
             self._validate_input_keys(input_keys)
@@ -85,7 +88,8 @@ class BaseNode(ABC):
     def _validate_input_keys(self, input_keys):
         if len(input_keys) < self.min_input_len:
             raise ValueError(
-                f"{self.node_name} requires at least {self.min_input_len} input keys, got {len(input_keys)}.")
+                f"""{self.node_name} requires at least {self.min_input_len}
+                 input keys, got {len(input_keys)}.""")
 
     def _parse_input_keys(self, state: dict, expression: str) -> List[str]:
         """
