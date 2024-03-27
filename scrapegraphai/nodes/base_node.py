@@ -40,7 +40,8 @@ class BaseNode(ABC):
                     raised to indicate the incorrect usage.
     """
 
-    def __init__(self, node_name: str, node_type: str, input: str, output: List[str], min_input_len: int = 1, model_config: Optional[dict] = None):
+    def __init__(self, node_name: str, node_type: str, input: str,
+                 output: List[str], min_input_len: int = 1, model_config: Optional[dict] = None):
         """
         Initialize the node with a unique identifier and a specified node type.
 
